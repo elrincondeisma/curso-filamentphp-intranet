@@ -4,8 +4,82 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a03a43237a09587ae2ae6793244292e4",
+    "content-hash": "7adb1c041640d38f9fb1b4def97602fb",
     "packages": [
+        {
+            "name": "altwaireb/laravel-countries-states-cities",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/altwaireb/laravel-countries-states-cities.git",
+                "reference": "4ce82d7ec1ae4fc357a47894a2869caf754a8473"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/altwaireb/laravel-countries-states-cities/zipball/4ce82d7ec1ae4fc357a47894a2869caf754a8473",
+                "reference": "4ce82d7ec1ae4fc357a47894a2869caf754a8473",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^10.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0.1",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.8",
+                "orchestra/testbench": "^8.8",
+                "pestphp/pest": "^2.20",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Altwaireb\\CountriesStatesCities\\CountriesStatesCitiesServiceProvider"
+                    ],
+                    "aliases": {
+                        "CountriesStatesCities": "Altwaireb\\CountriesStatesCities\\Facades\\CountriesStatesCities"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Altwaireb\\CountriesStatesCities\\": "src/",
+                    "Altwaireb\\CountriesStatesCities\\Database\\Seeders\\": "database/seeders/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdulmajeed Altwaireb",
+                    "email": "altwaireb@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Countries States Cities DB Migration & Seeder",
+            "homepage": "https://github.com/altwaireb/laravel-countries-states-cities",
+            "keywords": [
+                "cities",
+                "countries",
+                "laravel",
+                "states"
+            ],
+            "support": {
+                "issues": "https://github.com/altwaireb/laravel-countries-states-cities/issues",
+                "source": "https://github.com/altwaireb/laravel-countries-states-cities/tree/v1.0.1"
+            },
+            "time": "2023-12-12T08:45:28+00:00"
+        },
         {
             "name": "anourvalar/eloquent-serialize",
             "version": "1.2.18",
