@@ -51,4 +51,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Country::class);
     }
+    public function calendars(){
+        return $this->belongsToMany(Calendar::class);
+    }
+    public function departments(){
+        return $this->belongsToMany(Departament::class);
+    }
+    public function holidays(){
+        return $this->hasMany(Holiday::class);
+    }
+    public function timesheets(){
+        return $this->hasMany(Timesheet::class);
+    }
 }
