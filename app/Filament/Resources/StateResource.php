@@ -19,7 +19,7 @@ class StateResource extends Resource
     protected static ?string $navigationGroup = 'System Management';
 
     protected static ?string $navigationIcon = 'heroicon-o-building-library';
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 6;
 
     public static function form(Form $form): Form
     {
