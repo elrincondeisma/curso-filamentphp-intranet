@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7adb1c041640d38f9fb1b4def97602fb",
+    "content-hash": "c175514b0730be410c8f5672d1a1fcf4",
     "packages": [
         {
             "name": "altwaireb/laravel-countries-states-cities",
@@ -145,6 +145,170 @@
                 "source": "https://github.com/AnourValar/eloquent-serialize/tree/1.2.18"
             },
             "time": "2024-02-25T11:04:10+00:00"
+        },
+        {
+            "name": "bezhansalleh/filament-panel-switch",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bezhanSalleh/filament-panel-switch.git",
+                "reference": "85fdf7ec35a7c35f380d952146594cd423af683d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bezhanSalleh/filament-panel-switch/zipball/85fdf7ec35a7c35f380d952146594cd423af683d",
+                "reference": "85fdf7ec35a7c35f380d952146594cd423af683d",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.9",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BezhanSalleh\\PanelSwitch\\PanelSwitchServiceProvider"
+                    ],
+                    "aliases": {
+                        "PanelSwitch": "BezhanSalleh\\PanelSwitch\\Facades\\PanelSwitch"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BezhanSalleh\\PanelSwitch\\": "src/",
+                    "BezhanSalleh\\PanelSwitch\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bezhan Salleh",
+                    "email": "bezhan_salleh@yahoo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily Switch between your Filament Panels",
+            "homepage": "https://github.com/bezhansalleh/filament-panel-switch",
+            "keywords": [
+                "bezhanSalleh",
+                "filament",
+                "filament-panel-switch",
+                "panel-changer",
+                "panel-navigation",
+                "panel-switch"
+            ],
+            "support": {
+                "issues": "https://github.com/bezhansalleh/filament-panel-switch/issues",
+                "source": "https://github.com/bezhansalleh/filament-panel-switch"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/bezhanSalleh",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-01-12T02:52:11+00:00"
+        },
+        {
+            "name": "bezhansalleh/filament-shield",
+            "version": "3.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bezhanSalleh/filament-shield.git",
+                "reference": "f01db72f8db313d544a20325721461c5eb120957"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bezhanSalleh/filament-shield/zipball/f01db72f8db313d544a20325721461c5eb120957",
+                "reference": "f01db72f8db313d544a20325721461c5eb120957",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^3.2",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.9",
+                "spatie/laravel-permission": "^6.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.0|^8.0",
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-laravel": "^2.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpunit/phpunit": "^10.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BezhanSalleh\\FilamentShield\\FilamentShieldServiceProvider"
+                    ],
+                    "aliases": {
+                        "FilamentShield": "BezhanSalleh\\FilamentShield\\Facades\\FilamentShield"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BezhanSalleh\\FilamentShield\\": "src",
+                    "BezhanSalleh\\FilamentShield\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bezhan Salleh",
+                    "email": "bezhan_salleh@yahoo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Filament support for `spatie/laravel-permission`.",
+            "homepage": "https://github.com/bezhansalleh/filament-shield",
+            "keywords": [
+                "acl",
+                "bezhanSalleh",
+                "filament",
+                "filament-shield",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security"
+            ],
+            "support": {
+                "issues": "https://github.com/bezhanSalleh/filament-shield/issues",
+                "source": "https://github.com/bezhanSalleh/filament-shield/tree/3.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/bezhanSalleh",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-28T11:42:07+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -5043,6 +5207,53 @@
             "time": "2023-02-14T16:54:54+00:00"
         },
         {
+            "name": "shanerbaner82/panel-roles",
+            "version": "v0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shanerbaner82/panel-roles.git",
+                "reference": "86878c598a79eaaf178fbdbaed77cd387434faeb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shanerbaner82/panel-roles/zipball/86878c598a79eaaf178fbdbaed77cd387434faeb",
+                "reference": "86878c598a79eaaf178fbdbaed77cd387434faeb",
+                "shasum": ""
+            },
+            "require": {
+                "filament/support": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Shanerbaner82\\PanelRoles\\PanelRolesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Shanerbaner82\\PanelRoles\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SD Rosenthal",
+                    "email": "srosenthal82@gmail.com"
+                }
+            ],
+            "description": "Filament Panel Roles is an intuitive way to ensure all users of a specified panel within Filament v3 is assigned a role during registration and has a specified role using Laravel Middleware.",
+            "support": {
+                "issues": "https://github.com/shanerbaner82/panel-roles/issues",
+                "source": "https://github.com/shanerbaner82/panel-roles/tree/v0.0.3"
+            },
+            "time": "2023-10-10T00:33:42+00:00"
+        },
+        {
             "name": "spatie/color",
             "version": "1.5.3",
             "source": {
@@ -5219,6 +5430,88 @@
                 }
             ],
             "time": "2024-01-11T08:43:00+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "6.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "05cce017fe3ac78f60a3fce78c07fe6e8e6e6e52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/05cce017fe3ac78f60a3fce78c07fe6e8e6e6e52",
+                "reference": "05cce017fe3ac78f60a3fce78c07fe6e8e6e6e52",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/container": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/database": "^8.12|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/passport": "^11.0|^12.0",
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.4|^10.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "6.x-dev",
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 8.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/6.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-28T08:11:20+00:00"
         },
         {
             "name": "symfony/console",

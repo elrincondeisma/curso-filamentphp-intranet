@@ -20,6 +20,17 @@ class TimesheetResource extends Resource
     protected static ?string $model = Timesheet::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-table-cells';
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'create',
+            'update',
+            'delete',
+            'delete_any',
+        ];
+    }
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()->where('user_id', Auth::user()->id)->orderBy('id','desc');

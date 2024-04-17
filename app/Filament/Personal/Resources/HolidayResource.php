@@ -18,11 +18,24 @@ use Illuminate\Support\Facades\Auth;
 class HolidayResource extends Resource
 {
     protected static ?string $model = Holiday::class;
-
+    protected static ?string $navigationLabel = 'Vacaciones';
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+    public static function getNavigationBadge(): ?string
+    {
+
+        return parent::getEloquentQuery()->where('user_id', Auth::user()->id)->where('type','pending')->count();
+    }
+    public static function getNavigationBadgeColor(): ?string
+    {
+        return parent::getEloquentQuery()->where('user_id', Auth::user()->id)->where('type','pending')->count() > 0 ? 'warning' : 'primary';
+    }
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()->where('user_id', Auth::user()->id);
+    }
+    public static function getNavigationBadgeTooltip(): ?string
+    {
+        return 'The number of pending holidays';
     }
     protected function getRedirectUrl(): string
     {

@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -17,6 +18,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Shanerbaner82\PanelRoles\PanelRoles;
 
 class DashboardPanelProvider extends PanelProvider
 {
@@ -53,6 +55,22 @@ class DashboardPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                PanelRoles::make()
+                ->roleToAssign('super-admin')
+                ->restrictedRoles(['super_admin']),
+            ])
+            ->userMenuItems([
+                MenuItem::make()
+                    ->label('Personal')
+                    ->url('/personal')
+                    ->icon('heroicon-o-cog-6-tooth')
+                    ->visible(fn (): bool => auth()->user()?->hasAnyRole([
+                        'super_admin',
+                    ])),
+                // ...
             ]);
     }
 }

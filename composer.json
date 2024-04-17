@@ -10,11 +10,15 @@
     "require": {
         "php": "^8.1",
         "altwaireb/laravel-countries-states-cities": "^1.0",
+        "bezhansalleh/filament-panel-switch": "^1.0",
+        "bezhansalleh/filament-shield": "^3.2",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "shanerbaner82/panel-roles": "^0.0.3",
+        "spatie/laravel-permission": "^6.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
