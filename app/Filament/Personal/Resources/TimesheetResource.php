@@ -14,6 +14,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Auth;
+use pxlrbt\FilamentExcel\Actions\Tables\ExportBulkAction;
+use pxlrbt\FilamentExcel\Columns\Column;
+use pxlrbt\FilamentExcel\Exports\ExcelExport;
 
 class TimesheetResource extends Resource
 {
@@ -33,7 +36,7 @@ class TimesheetResource extends Resource
     }
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('user_id', Auth::user()->id)->orderBy('id','desc');
+        return parent::getEloquentQuery()->where('user_id', Auth::user()->id)->orderBy('day_in','desc');
     }
     public static function form(Form $form): Form
     {
@@ -64,9 +67,8 @@ class TimesheetResource extends Resource
                 Tables\Columns\TextColumn::make('calendar.name')
                     ->sortable()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('user.name')
-                    ->sortable()
-                    ->searchable(),
+
+
                 Tables\Columns\TextColumn::make('type')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('day_in')
@@ -101,6 +103,18 @@ class TimesheetResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    ExportBulkAction::make()->exports([
+                        ExcelExport::make('table')->fromTable()
+                        ->withFilename('Timesheet_'.date('Y-m-d') . '_export')
+                        ->withColumns([
+                            Column::make('User'),
+                            Column::make('created_at'),
+                            Column::make('deleted_at'),
+                        ]),
+                        ExcelExport::make('form')->fromForm()
+                        ->askForFilename()
+                        ->askForWriterType(),
+                    ])
                 ]),
             ]);
     }

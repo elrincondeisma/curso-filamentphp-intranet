@@ -3,8 +3,10 @@
 namespace App\Filament\Personal\Resources\TimesheetResource\Pages;
 
 use App\Filament\Personal\Resources\TimesheetResource;
+use App\Imports\MyTimesheetImport;
 use App\Models\Timesheet;
 use Carbon\Carbon;
+use EightyNine\ExcelImport\ExcelImportAction;
 use Filament\Actions;
 use Filament\Actions\Action;
 use Filament\Notifications\Notification;
@@ -122,6 +124,7 @@ class ListTimesheets extends ListRecords
                         ->send();
                 }),
             Actions\CreateAction::make(),
+            ExcelImportAction::make()->color("primary")->use(MyTimesheetImport::class),
         ];
     }
 }
