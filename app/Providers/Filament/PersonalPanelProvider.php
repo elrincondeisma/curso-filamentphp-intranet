@@ -81,9 +81,20 @@ class PersonalPanelProvider extends PanelProvider
                     ->label('Admin')
                     ->url('/admin')
                     ->icon('heroicon-o-cog-6-tooth')
-                    ->visible(fn (): bool => auth()->user()?->hasAnyRole([
-                        'super_admin',
-                    ])),
+                    ->visible(function (){
+                        if(auth()->user()){
+                            if(auth()->user()?->hasAnyRole([
+                                'super_admin'
+                            ])){
+                                return true;
+                            }else{
+                                return false;
+                            }
+                        }else{
+                            return false;
+                        }
+                        ;
+                    }) ,
                 // ...
             ])
             ;

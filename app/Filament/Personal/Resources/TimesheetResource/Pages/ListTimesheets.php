@@ -5,6 +5,7 @@ namespace App\Filament\Personal\Resources\TimesheetResource\Pages;
 use App\Filament\Personal\Resources\TimesheetResource;
 use App\Imports\MyTimesheetImport;
 use App\Models\Timesheet;
+use App\Models\User;
 use Carbon\Carbon;
 use EightyNine\ExcelImport\ExcelImportAction;
 use Filament\Actions;
@@ -12,6 +13,8 @@ use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class ListTimesheets extends ListRecords
 {
@@ -125,6 +128,18 @@ class ListTimesheets extends ListRecords
                 }),
             Actions\CreateAction::make(),
             ExcelImportAction::make()->color("primary")->use(MyTimesheetImport::class),
+            Action::make('createPDF')
+            ->label('Crear PDF')
+            ->color('warning')
+            ->requiresConfirmation()
+            ->url(
+                fn (): string => route('pdf.example', ['user' => Auth::user()]),
+                shouldOpenInNewTab: true
+            ),
         ];
+
+
+
     }
+
 }

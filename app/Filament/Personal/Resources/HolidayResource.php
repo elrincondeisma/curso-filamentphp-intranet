@@ -75,7 +75,7 @@ class HolidayResource extends Resource
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'pending' => 'gray',
-                        'approved' => 'success',
+                        'approved' => 'primary',
                         'decline' => 'danger',
                     })
                     ->searchable(),
