@@ -15,6 +15,7 @@
         "bezhansalleh/filament-shield": "^3.2",
         "eightynine/filament-excel-import": "^3.0",
         "filament/filament": "^3.2",
+        "flowframe/laravel-trend": "^0.2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
