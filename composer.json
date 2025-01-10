@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-        "altwaireb/laravel-countries-states-cities": "^1.0",
+        "altwaireb/laravel-world": "^1.0",
         "barryvdh/laravel-dompdf": "^2.1",
         "bezhansalleh/filament-panel-switch": "^1.0",
         "bezhansalleh/filament-shield": "^3.2",
